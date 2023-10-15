@@ -62,9 +62,6 @@ function randomSquare () {
     state.values.hitPosition = randomSquare.id
 }
 
-// function moveEnemy () {
-//     state.values.timerId = setInterval(randomSquare, state.values.gameVelocit)
-// }
 
 function addListenerHitBox () {
     state.view.squares.forEach((square) => {
@@ -81,7 +78,7 @@ function addListenerHitBox () {
 }
 
 function initialize () {
-    // moveEnemy()
+
     addListenerHitBox()
 }
 console.log(state.view.life)
