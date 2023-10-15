@@ -13,14 +13,15 @@ const state = {
         squares: document.querySelectorAll('.square'),
         enemy: document.querySelectorAll('.enemy'),
         timeLeft: document.querySelector('#time-left'),
-        score: document.querySelector('#score') 
+        score: document.querySelector('#score'),
+        life: document.querySelector('.menu-lives h2 span') 
     },
     // variaveis - para calculos ou backend
     values: {
         gameVelocit: 1000,
         hitPosition: 0,
         result: 0,
-        currentTime: 60,
+        currentTime: 10,
     },
     actions: {
         timerId: setInterval(randomSquare, 1000),
@@ -38,6 +39,7 @@ function countDown () {
         clearInterval(state.actions.countDownTimeId);
         clearInterval(state.actions.timerId);
         alert(`Game Over! Seu resultado foi: ` + state.values.result)
+        state.view.life.textContent--
     }
 }
 
@@ -82,6 +84,6 @@ function initialize () {
     // moveEnemy()
     addListenerHitBox()
 }
-
+console.log(state.view.life)
 
 initialize()
